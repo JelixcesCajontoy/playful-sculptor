@@ -1,15 +1,42 @@
+
 import { useState } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Index = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('DMS');
 
   const departments = [
-    { name: 'DAS', label: 'Department of Arts and Sciences' },
-    { name: 'DCS', label: 'Department of Computer Studies' },
-    { name: 'DTE', label: 'Department of Teacher Education' },
-    { name: 'DMS', label: 'Department of Management Studies' },
-    { name: 'DCrim', label: 'Department of Criminology' },
+    { 
+      name: 'DAS', 
+      label: 'Department of Arts and Sciences',
+      programs: ['Bachelor of Science in Psychology', 'Bachelor of Arts in Communication']
+    },
+    { 
+      name: 'DCS', 
+      label: 'Department of Computer Studies',
+      programs: ['BS in Computer Science', 'BS in Information Technology']
+    },
+    { 
+      name: 'DTE', 
+      label: 'Department of Teacher Education',
+      programs: ['Bachelor in Elementary Education', 'Bachelor in Secondary Education']
+    },
+    { 
+      name: 'DMS', 
+      label: 'Department of Management Studies',
+      programs: ['BS in Business Administration', 'BS in Hospitality Management']
+    },
+    { 
+      name: 'DCrim', 
+      label: 'Department of Criminology',
+      programs: ['BS in Criminology']
+    },
   ];
 
   const missionCards = [
@@ -45,15 +72,24 @@ const Index = () => {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               {departments.map((dept) => (
-                <button
-                  key={dept.name}
-                  onClick={() => setSelectedDepartment(dept.name)}
-                  className={`text-white hover:text-secondary transition-colors ${
+                <DropdownMenu key={dept.name}>
+                  <DropdownMenuTrigger className={`flex items-center space-x-1 text-white hover:text-secondary transition-colors ${
                     selectedDepartment === dept.name ? 'text-secondary font-semibold' : ''
-                  }`}
-                >
-                  {dept.name}
-                </button>
+                  }`}>
+                    <span>{dept.name}</span>
+                    <ChevronDown className="h-4 w-4" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    {dept.programs.map((program) => (
+                      <DropdownMenuItem 
+                        key={program}
+                        onClick={() => setSelectedDepartment(dept.name)}
+                      >
+                        {program}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
               ))}
             </nav>
 

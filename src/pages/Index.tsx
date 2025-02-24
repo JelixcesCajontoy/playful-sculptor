@@ -118,7 +118,7 @@ const Index = () => {
           {missionCards.map((card, index) => (
             <div
               key={index}
-              className="bg-primary/5 p-6 rounded-lg border border-primary/20 hover:bg-primary/10 transition-all duration-300 group"
+              className="bg-primary/5 p-6 rounded-lg border border-yellow/20 hover:bg-primary/10 transition-all duration-300 group"
             >
               <h3 className="text-primary font-bold mb-4 text-lg">
                 {card.title}

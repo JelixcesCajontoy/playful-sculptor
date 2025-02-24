@@ -1,12 +1,5 @@
-
 import { useState } from 'react';
-import { ChevronDown, Menu } from 'lucide-react';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Menu } from 'lucide-react';
 
 const Index = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('DMS');
@@ -17,13 +10,6 @@ const Index = () => {
     { name: 'DTE', label: 'Department of Teacher Education' },
     { name: 'DMS', label: 'Department of Management Studies' },
     { name: 'DCrim', label: 'Department of Criminology' },
-  ];
-
-  const navItems = [
-    { label: 'Home', href: '#' },
-    { label: 'About', href: '#' },
-    { label: 'Programs', href: '#' },
-    { label: 'Contact', href: '#' },
   ];
 
   const missionCards = [
@@ -58,32 +44,17 @@ const Index = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <a 
-                  key={item.label}
-                  href={item.href}
-                  className="text-white hover:text-secondary transition-colors"
+              {departments.map((dept) => (
+                <button
+                  key={dept.name}
+                  onClick={() => setSelectedDepartment(dept.name)}
+                  className={`text-white hover:text-secondary transition-colors ${
+                    selectedDepartment === dept.name ? 'text-secondary font-semibold' : ''
+                  }`}
                 >
-                  {item.label}
-                </a>
+                  {dept.name}
+                </button>
               ))}
-              
-              <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center space-x-1 text-white hover:text-secondary transition-colors">
-                  <span>{selectedDepartment}</span>
-                  <ChevronDown className="h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  {departments.map((dept) => (
-                    <DropdownMenuItem 
-                      key={dept.name}
-                      onClick={() => setSelectedDepartment(dept.name)}
-                    >
-                      {dept.label}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -137,11 +108,14 @@ const Index = () => {
             <div>
               <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                {navItems.map((item) => (
-                  <li key={item.label}>
-                    <a href={item.href} className="text-white/60 hover:text-white text-sm transition-colors">
-                      {item.label}
-                    </a>
+                {departments.map((dept) => (
+                  <li key={dept.name}>
+                    <button 
+                      onClick={() => setSelectedDepartment(dept.name)}
+                      className="text-white/60 hover:text-white text-sm transition-colors text-left"
+                    >
+                      {dept.label}
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -151,9 +125,12 @@ const Index = () => {
               <ul className="space-y-2">
                 {departments.map((dept) => (
                   <li key={dept.name}>
-                    <a href="#" className="text-white/60 hover:text-white text-sm transition-colors">
+                    <button 
+                      onClick={() => setSelectedDepartment(dept.name)}
+                      className="text-white/60 hover:text-white text-sm transition-colors text-left"
+                    >
                       {dept.name}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>

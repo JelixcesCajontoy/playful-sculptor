@@ -59,9 +59,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary to-blue-900 flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
-      <header className="bg-white/10 backdrop-blur-sm border-b border-white/20 sticky top-0 z-50">
+      <header className="bg-primary text-white sticky top-0 z-50">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -105,10 +105,10 @@ const Index = () => {
       <main className="container mx-auto px-4 py-12 flex-grow">
         {/* Hero Section */}
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-white text-5xl font-bold mb-4">
+          <h1 className="text-primary text-5xl font-bold mb-4">
             INSTITUTIONAL DEVELOPMENT OFFICE
           </h1>
-          <h2 className="text-white text-6xl font-bold mb-8 tracking-tight">
+          <h2 className="text-primary text-6xl font-bold mb-8 tracking-tight">
             ONLINE ACCREDITATION
           </h2>
         </div>
@@ -118,12 +118,12 @@ const Index = () => {
           {missionCards.map((card, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 group"
+              className="bg-primary/5 p-6 rounded-lg border border-primary/20 hover:bg-primary/10 transition-all duration-300 group"
             >
-              <h3 className="text-secondary font-bold mb-4 text-lg">
+              <h3 className="text-primary font-bold mb-4 text-lg">
                 {card.title}
               </h3>
-              <p className="text-white/90 whitespace-pre-line">
+              <p className="text-gray-600 whitespace-pre-line">
                 {card.content}
               </p>
             </div>
@@ -132,23 +132,23 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white/5 border-t border-white/10">
+      <footer className="bg-primary text-white">
         <div className="container mx-auto py-8 px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-white font-semibold text-lg mb-4">About Us</h3>
-              <p className="text-white/60 text-sm">
+              <h3 className="font-semibold text-lg mb-4">About Us</h3>
+              <p className="text-white/80 text-sm">
                 Cavite State University - Bacoor City Campus is committed to excellence in education, research, and community service.
               </p>
             </div>
             <div>
-              <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
+              <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 {departments.map((dept) => (
                   <li key={dept.name}>
                     <button 
                       onClick={() => setSelectedDepartment(dept.name)}
-                      className="text-white/60 hover:text-white text-sm transition-colors text-left"
+                      className="text-white/80 hover:text-white text-sm transition-colors text-left"
                     >
                       {dept.label}
                     </button>
@@ -157,13 +157,13 @@ const Index = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-white font-semibold text-lg mb-4">Departments</h3>
+              <h3 className="font-semibold text-lg mb-4">Departments</h3>
               <ul className="space-y-2">
                 {departments.map((dept) => (
                   <li key={dept.name}>
                     <button 
                       onClick={() => setSelectedDepartment(dept.name)}
-                      className="text-white/60 hover:text-white text-sm transition-colors text-left"
+                      className="text-white/80 hover:text-white text-sm transition-colors text-left"
                     >
                       {dept.name}
                     </button>
@@ -172,8 +172,8 @@ const Index = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-white font-semibold text-lg mb-4">Contact Us</h3>
-              <address className="text-white/60 text-sm not-italic">
+              <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+              <address className="text-white/80 text-sm not-italic">
                 Molino Road, Bayanan<br />
                 Bacoor City, Cavite<br />
                 Philippines<br />
@@ -183,7 +183,7 @@ const Index = () => {
               </address>
             </div>
           </div>
-          <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/60 text-sm">
+          <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/80 text-sm">
             © 2025 Cavite State University - Bacoor City Campus. All rights reserved.
           </div>
         </div>

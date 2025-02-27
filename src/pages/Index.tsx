@@ -117,7 +117,8 @@ const Index = () => {
           }}
         >
           {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0026B0]/70 to-[#FFD700]/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0026B0]/70 to-[#FFD700]/70"></div>
+
           
           {/* Text content */}
           <div className="relative z-10 text-center">

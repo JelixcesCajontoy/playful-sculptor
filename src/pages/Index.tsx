@@ -124,7 +124,7 @@ const Index = () => {
             <h1 className="text-white text-5xl font-bold mb-4">
               Cavite State University - Bacoor City Campus
             </h1>
-            <h1 className="text-white text-5xl mb-4">
+            <h1 className="text-white text-4xl mb-4">
               INSTITUTIONAL DEVELOPMENT OFFICE
             </h1>
             <h2 className="text-white text-8xl font-bold mb-4 tracking-tight">

@@ -68,7 +68,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <img src="/public/lovable-uploads/f6eb11f2-3823-4a34-8399-4b05e8a85c70.png" alt="University Logo" className="h-12 w-12"/>
+              <img src="/public/lovable-uploads/Cavite_State_University_(CvSU).png" alt="University Logo" className="h-12 w-12"/>
               <h1 className="text-white text-xl font-semibold">Cavite State University - Bacoor City Campus</h1>
             </div>
 

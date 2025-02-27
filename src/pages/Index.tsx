@@ -147,11 +147,6 @@ const Index = () => {
                   alt={card.alt}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-primary/40 flex items-center justify-center group-hover:bg-primary/50 transition-colors">
-                  <h3 className="text-white font-bold text-xl px-4 text-center">
-                    {card.title}
-                  </h3>
-                </div>
               </div>
             </div>
           ))}

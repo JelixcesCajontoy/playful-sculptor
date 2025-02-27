@@ -111,7 +111,7 @@ const Index = () => {
           <h1 className="text-primary text-5xl font-bold mb-4">
             INSTITUTIONAL DEVELOPMENT OFFICE
           </h1>
-          <h2 className="text-primary text-6xl font-bold mb-8 tracking-tight">
+          <h2 className="text-primary text-8xl font-bold mb-8 tracking-tight">
             ONLINE ACCREDITATION
           </h2>
         </div>

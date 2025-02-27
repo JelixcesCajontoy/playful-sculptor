@@ -121,13 +121,13 @@ const Index = () => {
           
           {/* Text content */}
           <div className="relative z-10 text-center">
-            <h1 className="text-white text-5xl font-bold mb-4">
+            <h1 className="text-white text-5xl font-bold mb-2">
               Cavite State University - Bacoor City Campus
             </h1>
-            <h1 className="text-white text-4xl mb-4">
+            <h1 className="text-white text-4xl mb-2">
               INSTITUTIONAL DEVELOPMENT OFFICE
             </h1>
-            <h2 className="text-white text-8xl font-bold mb-4 tracking-tight">
+            <h2 className="text-white text-8xl font-bold mb-2 tracking-tight">
               ONLINE ACCREDITATION
             </h2>
           </div>

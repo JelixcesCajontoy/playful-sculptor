@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu, ChevronDown } from 'lucide-react';
 import {
@@ -42,25 +41,21 @@ const Index = () => {
   const missionCards = [
     {
       title: "UNIVERSITY MISSION",
-      content: "Cavite State University shall provide excellent, equitable and relevant educational opportunities in the arts, sciences and technology through quality instruction and responsive research and development activities.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
       alt: "University students collaborating"
     },
     {
       title: "QUALITY POLICY",
-      content: "We Commit to the highest standards of education, value our stakeholders, Strive for continual improvement of our products and services, and uphold the University's tenets of Truth, Excellence, and Service to produce globally competitive and morally upright individuals.",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
       alt: "Quality education representation"
     },
     {
       title: "UNIVERSITY VISION",
-      content: "The premier university in historic Cavite globally recognized for excellence in character development, academics, research, innovation and sustainable community engagement.",
       image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80",
       alt: "Vision and growth representation"
     },
     {
       title: "CORE VALUES",
-      content: "TRUTH\nEXCELLENCE\nSERVICE",
       image: "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?auto=format&fit=crop&w=800&q=80",
       alt: "Core values representation"
     },
@@ -126,24 +121,19 @@ const Index = () => {
           {missionCards.map((card, index) => (
             <div
               key={index}
-              className="bg-primary/5 rounded-lg border border-primary/20 hover:bg-primary/10 transition-all duration-300 group overflow-hidden"
+              className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
             >
               <div className="aspect-video w-full relative">
                 <img 
                   src={card.image} 
                   alt={card.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-primary/40 flex items-center justify-center">
+                <div className="absolute inset-0 bg-primary/40 flex items-center justify-center group-hover:bg-primary/50 transition-colors">
                   <h3 className="text-white font-bold text-xl px-4 text-center">
                     {card.title}
                   </h3>
                 </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-600 whitespace-pre-line text-sm">
-                  {card.content}
-                </p>
               </div>
             </div>
           ))}

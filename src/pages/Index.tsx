@@ -107,21 +107,24 @@ const Index = () => {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12 flex-grow">
-        {/* Hero Section with Gradient Background */}
+        {/* Hero Section with Background Image */}
         <div 
           className="relative rounded-xl overflow-hidden mb-16 animate-fade-in py-16"
           style={{
-            background: 'linear-gradient(135deg, #0026B0 0%, #FFD700 100%)',
+            backgroundImage: `url('/lovable-uploads/cvsu_building.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
         >
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-primary/70"></div>
+          
           {/* Text content */}
           <div className="relative z-10 text-center">
-            <h1 className="text-white text-5xl font-bold mb-4 drop-shadow-lg">
+            <h1 className="text-white text-5xl font-bold mb-4">
               INSTITUTIONAL DEVELOPMENT OFFICE
             </h1>
-            <h2 className="text-white text-6xl font-bold mb-4 tracking-tight drop-shadow-lg">
+            <h2 className="text-white text-6xl font-bold mb-4 tracking-tight">
               ONLINE ACCREDITATION
             </h2>
           </div>

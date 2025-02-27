@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, ChevronDown } from 'lucide-react';
 import {
@@ -40,24 +41,24 @@ const Index = () => {
 
   const missionCards = [
     {
-      
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
-      alt: "University students collaborating"
+      title: "UNIVERSITY MISSION",
+      image: "/lovable-uploads/Cavite_State_University_(CvSU).png",
+      alt: "University Mission"
     },
     {
-      
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
-      alt: "Quality education representation"
+      title: "QUALITY POLICY",
+      image: "/lovable-uploads/cvsu_building.png",
+      alt: "Quality Policy"
     },
     {
-      
-      image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80",
-      alt: "Vision and growth representation"
+      title: "UNIVERSITY VISION",
+      image: "/lovable-uploads/Cavite_State_University_(CvSU).png",
+      alt: "University Vision"
     },
     {
-      
-      image: "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?auto=format&fit=crop&w=800&q=80",
-      alt: "Core values representation"
+      title: "CORE VALUES",
+      image: "/lovable-uploads/cvsu_building.png",
+      alt: "Core Values"
     },
   ];
 
@@ -68,7 +69,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <img src="/public/lovable-uploads/Cavite_State_University_(CvSU).png" alt="University Logo" className="h-12 w-12"/>
+              <img src="/lovable-uploads/Cavite_State_University_(CvSU).png" alt="University Logo" className="h-12 w-12"/>
               <h1 className="text-white text-xl font-semibold">Cavite State University - Bacoor City Campus</h1>
             </div>
 
@@ -111,7 +112,7 @@ const Index = () => {
           <h1 className="text-primary text-5xl font-bold mb-4">
             INSTITUTIONAL DEVELOPMENT OFFICE
           </h1>
-          <h2 className="text-primary text-8xl font-bold mb-8 tracking-tight">
+          <h2 className="text-primary text-6xl font-bold mb-8 tracking-tight">
             ONLINE ACCREDITATION
           </h2>
         </div>

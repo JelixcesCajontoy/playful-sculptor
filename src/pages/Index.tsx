@@ -42,22 +42,22 @@ const Index = () => {
   const missionCards = [
     {
       title: "UNIVERSITY MISSION",
-      image: "/lovable-uploads/Cavite_State_University_(CvSU).png",
+      image: "/lovable-uploads/mission.png",
       alt: "University Mission"
     },
     {
       title: "QUALITY POLICY",
-      image: "/lovable-uploads/cvsu_building.png",
+      image: "/lovable-uploads/quality policy.png",
       alt: "Quality Policy"
     },
     {
       title: "UNIVERSITY VISION",
-      image: "/lovable-uploads/Cavite_State_University_(CvSU).png",
+      image: "/lovable-uploads/vision.png",
       alt: "University Vision"
     },
     {
       title: "CORE VALUES",
-      image: "/lovable-uploads/cvsu_building.png",
+      image: "/lovable-uploads/core values.png",
       alt: "Core Values"
     },
   ];

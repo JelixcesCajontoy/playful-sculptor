@@ -55,7 +55,7 @@ const Index = () => {
       alt: "Vision and growth representation"
     },
     {
-      title: "CORE VALUES",
+      
       image: "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?auto=format&fit=crop&w=800&q=80",
       alt: "Core values representation"
     },

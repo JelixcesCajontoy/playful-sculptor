@@ -40,17 +40,17 @@ const Index = () => {
 
   const missionCards = [
     {
-      title: "UNIVERSITY MISSION",
+      
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
       alt: "University students collaborating"
     },
     {
-      title: "QUALITY POLICY",
+      
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
       alt: "Quality education representation"
     },
     {
-      title: "UNIVERSITY VISION",
+      
       image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80",
       alt: "Vision and growth representation"
     },

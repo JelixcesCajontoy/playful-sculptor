@@ -47,7 +47,7 @@ const Index = () => {
     },
     {
       title: "QUALITY POLICY",
-      image: "/lovable-uploads/quality policy.png",
+      image: "/lovable-uploads/quality_policy.png",
       alt: "Quality Policy"
     },
     {
@@ -57,7 +57,7 @@ const Index = () => {
     },
     {
       title: "CORE VALUES",
-      image: "/lovable-uploads/core values.png",
+      image: "/lovable-uploads/core_values.png",
       alt: "Core Values"
     },
   ];

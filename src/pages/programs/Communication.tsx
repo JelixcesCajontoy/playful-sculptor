@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const Psychology = () => {
+const Communication = () => {
   const navigate = useNavigate();
   
   const departments = [
@@ -97,26 +97,24 @@ const Psychology = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold text-primary mb-8">
-          Bachelor of Science in Psychology
+          Bachelor of Arts in Communication
         </h1>
         <div className="prose max-w-none">
           <p className="text-lg mb-6">
-            The Bachelor of Science in Psychology program at Cavite State University - Bacoor City Campus 
-            prepares students for careers in psychology and related fields. Our comprehensive curriculum 
-            combines theoretical knowledge with practical applications.
+            The Bachelor of Arts in Communication at Cavite State University - Bacoor City Campus 
+            prepares students for careers in media, public relations, journalism, and other communication fields.
           </p>
           <p className="text-lg mb-6">
-            Students will explore various psychological theories, research methodologies, and practical
-            applications in clinical, educational, organizational, and social settings. The program
-            emphasizes critical thinking, ethical practice, and evidence-based approaches.
+            Our program provides a comprehensive education in communication theory and practice, 
+            with emphasis on media production, critical analysis, and ethical communication.
           </p>
           <h2 className="text-2xl font-semibold text-primary mt-8 mb-4">Program Outcomes</h2>
           <ul className="list-disc pl-6 mb-6">
-            <li className="mb-2">Develop a strong foundation in psychological theories and concepts</li>
-            <li className="mb-2">Gain skills in research methods and statistical analysis</li>
-            <li className="mb-2">Apply psychological principles to understand human behavior</li>
-            <li className="mb-2">Develop ethical reasoning and professional conduct</li>
-            <li className="mb-2">Prepare for graduate studies or entry-level positions in psychology-related fields</li>
+            <li className="mb-2">Develop skills in written, oral, and visual communication</li>
+            <li className="mb-2">Gain experience with contemporary media production technologies</li>
+            <li className="mb-2">Apply critical thinking to the analysis of media messages</li>
+            <li className="mb-2">Understand ethical dimensions of communication practices</li>
+            <li className="mb-2">Prepare for careers in media, journalism, public relations, and related fields</li>
           </ul>
         </div>
       </div>
@@ -133,4 +131,4 @@ const Psychology = () => {
   );
 };
 
-export default Psychology;
+export default Communication;

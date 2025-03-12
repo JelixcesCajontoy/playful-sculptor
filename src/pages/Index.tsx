@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, ChevronDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -64,9 +65,13 @@ const Index = () => {
   ];
 
   const handleProgramClick = (program: string) => {
-    if (program === 'Bachelor of Science in Psychology') {
-      navigate('/programs/psychology');
-    }
+    // Format the program name to create a URL-friendly path
+    const formatRoutePath = (name: string) => {
+      return name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    };
+    
+    const routePath = formatRoutePath(program);
+    navigate(`/programs/${routePath}`);
   };
 
   return (

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown, Menu } from 'lucide-react';
@@ -119,7 +118,7 @@ const HospitalityManagement = () => {
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Footer - already simplified */}
       <footer className="bg-primary text-white mt-auto">
         <div className="container mx-auto py-8 px-4">
           <div className="text-center text-white/80 text-sm">

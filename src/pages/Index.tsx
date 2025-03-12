@@ -1,6 +1,6 @@
-
 import { useState } from 'react';
 import { Menu, ChevronDown } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,6 +10,7 @@ import {
 
 const Index = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('DMS');
+  const navigate = useNavigate();
 
   const departments = [
     { 
@@ -62,6 +63,12 @@ const Index = () => {
     },
   ];
 
+  const handleProgramClick = (program: string) => {
+    if (program === 'Bachelor of Science in Psychology') {
+      navigate('/programs/psychology');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
@@ -87,7 +94,10 @@ const Index = () => {
                     {dept.programs.map((program) => (
                       <DropdownMenuItem 
                         key={program}
-                        onClick={() => setSelectedDepartment(dept.name)}
+                        onClick={() => {
+                          setSelectedDepartment(dept.name);
+                          handleProgramClick(program);
+                        }}
                       >
                         {program}
                       </DropdownMenuItem>

@@ -58,19 +58,19 @@ const ProgramHeader = ({ programName }: ProgramHeaderProps) => {
   };
 
   return (
-    <header className="bg-blue-700 text-white sticky top-0 z-50 shadow-md">
+    <header className="bg-primary text-white sticky top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 cursor-pointer group" onClick={handleHomeClick}>
             <img src="/lovable-uploads/Cavite_State_University_(CvSU).png" alt="University Logo" className="h-12 w-12 transition-transform duration-300 group-hover:scale-110"/>
-            <h1 className="text-white text-xl font-semibold group-hover:text-blue-200 transition-colors">Cavite State University - Bacoor City Campus |</h1>
+            <h1 className="text-white text-xl font-semibold group-hover:text-secondary transition-colors">Cavite State University - Bacoor City Campus |</h1>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {departments.map((dept) => (
               <DropdownMenu key={dept.name}>
-                <DropdownMenuTrigger className="flex items-center space-x-1 text-white hover:text-blue-200 transition-colors">
+                <DropdownMenuTrigger className="flex items-center space-x-1 text-white hover:text-secondary transition-colors">
                   <span>{dept.name}</span>
                   <ChevronDown className="h-4 w-4" />
                 </DropdownMenuTrigger>
@@ -90,7 +90,7 @@ const ProgramHeader = ({ programName }: ProgramHeaderProps) => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-white hover:text-blue-200 transition-colors">
+          <button className="md:hidden text-white hover:text-secondary transition-colors">
             <Menu className="h-6 w-6" />
           </button>
         </div>

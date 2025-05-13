@@ -26,6 +26,7 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
+import ProgramHeader from '../../components/ProgramHeader';
 
 const Criminology = () => {
   const navigate = useNavigate();
@@ -37,47 +38,6 @@ const Criminology = () => {
       area: "",
     },
   });
-
-  const departments = [
-    { 
-      name: 'DAS', 
-      label: 'Department of Arts and Sciences',
-      programs: ['Bachelor of Science in Psychology', 'Bachelor of Arts in Communication']
-    },
-    { 
-      name: 'DCS', 
-      label: 'Department of Computer Studies',
-      programs: ['BS in Computer Science', 'BS in Information Technology']
-    },
-    { 
-      name: 'DTE', 
-      label: 'Department of Teacher Education',
-      programs: ['Bachelor in Elementary Education', 'Bachelor in Secondary Education']
-    },
-    { 
-      name: 'DMS', 
-      label: 'Department of Management Studies',
-      programs: ['BS in Business Administration', 'BS in Hospitality Management']
-    },
-    { 
-      name: 'DCrim', 
-      label: 'Department of Criminology',
-      programs: ['BS in Criminology']
-    },
-  ];
-
-  const handleProgramClick = (program: string) => {
-    const formatRoutePath = (name: string) => {
-      return name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-    };
-    
-    const routePath = formatRoutePath(program);
-    navigate(`/programs/${routePath}`);
-  };
-
-  const handleHomeClick = () => {
-    navigate('/');
-  };
 
   const handleAreaChange = (value: string) => {
     setSelectedArea(value);
@@ -128,54 +88,22 @@ const Criminology = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="bg-blue-700 text-white sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2 cursor-pointer" onClick={handleHomeClick}>
-              <img src="/lovable-uploads/Cavite_State_University_(CvSU).png" alt="University Logo" className="h-12 w-12"/>
-              <h1 className="text-white text-xl font-semibold">Cavite State University - Bacoor City Campus |</h1>
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              {departments.map((dept) => (
-                <DropdownMenu key={dept.name}>
-                  <DropdownMenuTrigger className="flex items-center space-x-1 text-white hover:text-secondary transition-colors">
-                    <span>{dept.name}</span>
-                    <ChevronDown className="h-4 w-4" />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    {dept.programs.map((program) => (
-                      <DropdownMenuItem 
-                        key={program}
-                        onClick={() => handleProgramClick(program)}
-                      >
-                        {program}
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ))}
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <button className="md:hidden text-white hover:text-secondary transition-colors">
-              <Menu className="h-6 w-6" />
-            </button>
-          </div>
-        </div>
-      </header>
+      <ProgramHeader programName="BS in Criminology" />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-8 bg-slate-200 rounded-lg mt-4">
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
-          BS in Criminology
-        </h1>
+      <div className="container mx-auto px-4 py-8">
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
+          <h1 className="text-3xl font-bold text-center text-gray-800 mb-2">
+            BS in Criminology
+          </h1>
+          <p className="text-center text-gray-600 mb-4">Department of Criminology</p>
+          <div className="w-24 h-1 bg-blue-700 mx-auto rounded-full"></div>
+        </div>
         
         <Tabs defaultValue="instruction" className="w-full" onValueChange={setActiveTab}>
-          <TabsList className="w-full flex justify-start overflow-x-auto">
+          <TabsList className="w-full flex justify-start overflow-x-auto scrollbar-hide">
             <TabsTrigger 
               value="instruction" 
               className={`px-6 py-2 ${activeTab === "instruction" ? "bg-blue-700 text-white" : ""}`}
@@ -352,10 +280,54 @@ const Criminology = () => {
         </Tabs>
       </div>
 
-      {/* Footer - Simplified version */}
+      {/* Footer */}
       <footer className="bg-primary text-white mt-auto">
         <div className="container mx-auto py-8 px-4">
-          <div className="text-center text-white/80 text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="font-semibold text-lg mb-4">About Us</h3>
+              <p className="text-white/80 text-sm">
+                Cavite State University - Bacoor City Campus is committed to excellence in education, research, and community service.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-semibold text-lg mb-4">Departments</h3>
+              <ul className="space-y-2 text-white/80 text-sm">
+                <li><span className="hover:text-white transition-colors">Department of Arts and Sciences</span></li>
+                <li><span className="hover:text-white transition-colors">Department of Computer Studies</span></li>
+                <li><span className="hover:text-white transition-colors">Department of Teacher Education</span></li>
+                <li><span className="hover:text-white transition-colors">Department of Management Studies</span></li>
+                <li><span className="hover:text-white transition-colors">Department of Criminology</span></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="font-semibold text-lg mb-4">Courses Offered</h3>
+              <ul className="space-y-2 text-white/80 text-sm">
+                <li><span className="hover:text-white transition-colors">Bachelor of Science in Psychology</span></li>
+                <li><span className="hover:text-white transition-colors">Bachelor of Science in Computer Science</span></li>
+                <li><span className="hover:text-white transition-colors">Bachelor of Science in Information Technology</span></li>
+                <li><span className="hover:text-white transition-colors">Bachelor in Secondary Education - Math</span></li>
+                <li><span className="hover:text-white transition-colors">Bachelor of Science in Business Administration</span></li>
+                <li><span className="hover:text-white transition-colors">Bachelor of Science in Hospitality Management</span></li>
+                <li><span className="hover:text-white transition-colors">Bachelor of Science in Criminology</span></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+              <address className="text-white/80 text-sm not-italic space-y-2">
+                <p>Soldiers Hills IV, Molino VI</p>
+                <p>Bacoor City, Cavite</p>
+                <p>Philippines</p>
+                <a href="mailto:cvsubacoor@cvsu.edu.ph" className="hover:text-white transition-colors block">
+                  cvsubacoor@cvsu.edu.ph
+                </a>
+              </address>
+            </div>
+          </div>
+          <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/80 text-sm">
             © 2025 Cavite State University - Bacoor City Campus. All rights reserved.
           </div>
         </div>

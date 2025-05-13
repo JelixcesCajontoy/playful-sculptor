@@ -9,11 +9,35 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form";
+import { useForm } from "react-hook-form";
 
 const Criminology = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("instruction");
+  const [selectedArea, setSelectedArea] = useState<string>("");
   
+  const form = useForm({
+    defaultValues: {
+      area: "",
+    },
+  });
+
   const departments = [
     { 
       name: 'DAS', 
@@ -55,6 +79,10 @@ const Criminology = () => {
     navigate('/');
   };
 
+  const handleAreaChange = (value: string) => {
+    setSelectedArea(value);
+  };
+
   const documentSections = [
     {
       title: "INSTRUCTION_SECTION 1: WELL-DEFINED OBJECTIVES",
@@ -84,6 +112,19 @@ const Criminology = () => {
       title: "INSTRUCTION_SECTION 7: BONUS POINTS: AWARDS OF DISTINCTION AND ACHIEVEMENT AND GRANTS OF THE PROGRAM (BEST PRACTICES ADOPTED)",
       type: "pdf"
     }
+  ];
+
+  const areasData = [
+    { value: "area1", label: "AREA 1: Mission, Goals and Objectives" },
+    { value: "area2", label: "AREA 2: Faculty" },
+    { value: "area3", label: "AREA 3: Curriculum and Instruction" },
+    { value: "area4", label: "AREA 4: Support to Students" },
+    { value: "area5", label: "AREA 5: Research" },
+    { value: "area6", label: "AREA 6: Extension and Community Involvement" },
+    { value: "area7", label: "AREA 7: Library" },
+    { value: "area8", label: "AREA 8: Physical Facilities" },
+    { value: "area9", label: "AREA 9: Laboratories" },
+    { value: "area10", label: "AREA 10: Administration" },
   ];
 
   return (
@@ -239,7 +280,55 @@ const Criminology = () => {
 
           <TabsContent value="compliance">
             <div className="bg-white p-6 rounded-md shadow-sm min-h-[200px]">
-              <p className="text-gray-500">Compliance Report content will appear here.</p>
+              <div className="max-w-md mx-auto">
+                <h2 className="text-xl font-semibold mb-4">Compliance Report</h2>
+                <Form {...form}>
+                  <form className="space-y-4">
+                    <FormField
+                      control={form.control}
+                      name="area"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-medium">Select Area:</FormLabel>
+                          <Select 
+                            onValueChange={(value) => {
+                              field.onChange(value);
+                              handleAreaChange(value);
+                            }}
+                            defaultValue={field.value}
+                          >
+                            <FormControl>
+                              <SelectTrigger className="w-full">
+                                <SelectValue placeholder="Select an area" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent className="bg-white">
+                              <SelectGroup>
+                                {areasData.map((area) => (
+                                  <SelectItem key={area.value} value={area.value}>
+                                    {area.label}
+                                  </SelectItem>
+                                ))}
+                              </SelectGroup>
+                            </SelectContent>
+                          </Select>
+                        </FormItem>
+                      )}
+                    />
+                  </form>
+                </Form>
+                
+                {selectedArea && (
+                  <div className="mt-6 p-4 bg-blue-50 rounded-md">
+                    <h3 className="font-medium text-blue-800">
+                      {areasData.find(area => area.value === selectedArea)?.label}
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-600">
+                      Files and documents related to {areasData.find(area => area.value === selectedArea)?.label} will appear here.
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
           </TabsContent>
 

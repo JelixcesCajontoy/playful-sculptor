@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ProgramHeader from '../../components/ProgramHeader';
 import ProgramTabs from '../../components/ProgramTabs';
@@ -6,6 +5,7 @@ import DocumentSection from '../../components/DocumentSection';
 import EmptyTabContent from '../../components/EmptyTabContent';
 import ComplianceReportTab from '../../components/ComplianceReportTab';
 import { TabsContent } from "@/components/ui/tabs";
+import Footer from '../../components/Footer';
 
 const HospitalityManagement = () => {
   const documentSections = [
@@ -73,13 +73,7 @@ const HospitalityManagement = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-blue-800 text-white mt-auto">
-        <div className="container mx-auto py-6 px-4">
-          <div className="text-center text-white/80 text-sm">
-            © 2025 Cavite State University - Bacoor City Campus. All rights reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

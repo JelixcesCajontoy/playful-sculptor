@@ -3,10 +3,15 @@ import React from 'react';
 import ProgramHeader from '../../components/ProgramHeader';
 import ProgramTabs from '../../components/ProgramTabs';
 import DocumentTable from '../../components/DocumentTable';
-import EmptyTabContent from '../../components/EmptyTabContent';
 import ComplianceReportTab from '../../components/ComplianceReportTab';
 import { TabsContent } from "@/components/ui/tabs";
 import Footer from '../../components/Footer';
+import ExtensionTab from '../../components/ExtensionTab';
+import FacultyTab from '../../components/FacultyTab';
+import LibraryTab from '../../components/LibraryTab';
+import WorkingChecklistTab from '../../components/WorkingChecklistTab';
+import TechnicalReportTab from '../../components/TechnicalReportTab';
+import RequestedDocumentsTab from '../../components/RequestedDocumentsTab';
 
 const Psychology = () => {
   const documentSections = [
@@ -63,13 +68,13 @@ const Psychology = () => {
             />
           </TabsContent>
           
-          <EmptyTabContent value="extension" message="Extension program content and documents will appear here." />
-          <EmptyTabContent value="faculty" message="Faculty development content and documents will appear here." />
-          <EmptyTabContent value="library" message="Library resources content and documents will appear here." />
+          <ExtensionTab programCode="Psychology" />
+          <FacultyTab programCode="Psychology" />
+          <LibraryTab programCode="Psychology" />
           <ComplianceReportTab />
-          <EmptyTabContent value="working" message="Working checklist content and documents will appear here." />
-          <EmptyTabContent value="technical" message="AACCUP technical report content and documents will appear here." />
-          <EmptyTabContent value="documents" message="Requested documents will appear here." />
+          <WorkingChecklistTab programCode="Psychology" />
+          <TechnicalReportTab programCode="Psychology" />
+          <RequestedDocumentsTab programCode="Psychology" />
         </ProgramTabs>
       </div>
 

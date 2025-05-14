@@ -1,7 +1,8 @@
+
 import React from 'react';
 import ProgramHeader from '../../components/ProgramHeader';
 import ProgramTabs from '../../components/ProgramTabs';
-import DocumentSection from '../../components/DocumentSection';
+import DocumentTable from '../../components/DocumentTable';
 import EmptyTabContent from '../../components/EmptyTabContent';
 import ComplianceReportTab from '../../components/ComplianceReportTab';
 import { TabsContent } from "@/components/ui/tabs";
@@ -56,7 +57,7 @@ const SecondaryEducation = () => {
         
         <ProgramTabs>
           <TabsContent value="instruction" className="mt-4 animate-fade-in">
-            <DocumentSection 
+            <DocumentTable 
               programCode="SEC" 
               documents={documentSections} 
             />
